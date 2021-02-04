@@ -138,35 +138,6 @@ static NSString * const SDAlternateImageOperationKey = @"NSButtonAlternateImageO
                                }
                            }];
 }
-
-#pragma mark - Cancel
-
-- (void)sd_cancelCurrentImageLoad {
-    [self sd_cancelImageLoadOperationWithKey:NSStringFromClass([self class])];
-}
-
-- (void)sd_cancelCurrentAlternateImageLoad {
-    [self sd_cancelImageLoadOperationWithKey:SDAlternateImageOperationKey];
-}
-
-#pragma mar - Private
-
-- (NSURL *)sd_currentImageURL {
-    return objc_getAssociatedObject(self, @selector(sd_currentImageURL));
-}
-
-- (void)setSd_currentImageURL:(NSURL *)sd_currentImageURL {
-    objc_setAssociatedObject(self, @selector(sd_currentImageURL), sd_currentImageURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSURL *)sd_currentAlternateImageURL {
-    return objc_getAssociatedObject(self, @selector(sd_currentAlternateImageURL));
-}
-
-- (void)setSd_currentAlternateImageURL:(NSURL *)sd_currentAlternateImageURL {
-    objc_setAssociatedObject(self, @selector(sd_currentAlternateImageURL), sd_currentAlternateImageURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 @end
 
 #endif
